@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="sryle.css">
 </head>
 <body>
-    <h1>HOROSKOP</h1>
-    <h2>INPUT YOUR DATE</h2>
-    <div class="cotainer"> 
-        <button onclick="sparaHoroskop">spara mitt horoskop</button>
-        <button onclick="uppdeteraHoroskop">uppdatera mitt horoskop</button>
-        <button onclick="raderaHoroskop">uppdatera mitt horoskop</button>
-    </div>
+    <h1>HOROSCOPE</h1>
+    <section class='card'>
+     <h2>Vad är din födelsedag?</h2>
+        <input id="type" type="date" name="date"/> 
+        <button type="submit" class="btn"  onclick="add()">spara mitt horoskop</button>
+        <button type="submit" class="btn"  onclick="uppdate()">uppdatera horoskop</button>
+        <button type="submit" class="btn"  onclick="deleteData()">radera mitt horoskop</button>
+    </section>
+    
 
     <script src="./logic.js"></script>
 </body>

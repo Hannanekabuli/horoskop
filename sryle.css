@@ -34,7 +34,7 @@ h1 {
 }
 
 input {
-    font-size: 30px;        
+    font-size: 35px;        
     box-shadow: 6px 6px 3px 1px rgba(53, 53, 54, 0.2);
     color: rgb(247, 107, 228);
     background: none;
@@ -43,9 +43,10 @@ input {
 
 button {
     margin: 10px;
+    padding: 10px;
     border-radius: 90px;
     border: solid 2px;
     background: none;
     box-shadow:  6px 6px 3px 1px rgba(53, 54, 53, 0.2);
-    font-size: 30px;
+    font-size: 25px;
 }

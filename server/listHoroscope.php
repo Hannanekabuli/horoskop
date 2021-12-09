@@ -1,6 +1,6 @@
 <?php
 
-$horoskopListhoroskopList = [
+$horoscopeList = [
     [
         "name" => "Vattumannen",
         "latinName" : "Aquarius",
@@ -134,12 +134,13 @@ return "Fiskarna";
 }elseif($date >= 1122 && $date <= 1221){
 
     return "Skytten";
-}else($date >= 1222 && $date <= 0120){
+}elseif($date >= 1222 && $date <= 0120){
 
-    return "Stenbocken";}
-
-
-
+    return "Stenbocken";
+}else{
+    return "false";
+}
+};
 
 
 

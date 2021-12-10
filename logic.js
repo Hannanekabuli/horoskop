@@ -1,19 +1,32 @@
-function addHoroscope(result) {
+function add() {
+    let inputDate = document.getElementById('card').ariaValueMax;
+    if(inputDate.lemght){
 
-    if(result){
-        document.querySelector()
+        let url = "./server/ahhHoroscope.php"
+        let method = "POST"
+
+
+        let formData =new FormData()
+        formData.set("data", inputDate)
+        makeRequest(url, method. formData, (result) => {
+            console.log(result);
+            if(result) {
+                getHoroscope();
+            }
+        });
+    }else{
+        console.log("välj ett datum")
     }
 }
 
+function addHoroscope(){
 
+    console.log("Du kom in i addHoroscope")
 
-
-
-
-
-function viewHoroscope(){
-
-    document.querySelector("#btn").addEventListener("click", () => {
-        
-    })
 }
+
+
+
+
+
+

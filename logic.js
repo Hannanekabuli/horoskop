@@ -1,3 +1,39 @@
+
+
+function addContentToWebpage(){
+
+    let logic = document.getElementsByTagName("logic")[0]
+    let horoscope = document.querySelector(".horoscope")
+
+    
+    let container = document.createElement("div")
+    container.classList.add("inputDiv")
+    horoscope.appendChild(container)
+
+    
+    let date = document.createElement("h3")
+    date.classList.add("date")
+    container.appendChild(date)
+
+
+    
+    let buttons = document.createElement("div")
+    buttons.classList.add("buttons")
+    buttons.setAttribute("id", "buttons1")
+    logic.appendChild(buttons) 
+
+
+
+}
+
+
+    
+
+
+
+
+
+
 function add() {
     let inputDate = document.getElementById('input').ariaValueMax;
     if(inputDate.lemght){
@@ -84,19 +120,5 @@ function deleteResult() {
 }
 
 
-function makeRequest(url, method, formData, callback){
- 
-    fetch(url, {
-        method: method,
-        body: formData
-    }).then((response) => {
-        return response.json()
-    }).then((result) => {
-        console.log(result)
-        callback(result)
-    }).catch((err) => {
-        console.log("Error : ",err); 
-    })
-}
 
 

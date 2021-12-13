@@ -67,36 +67,21 @@ function add() {
 
 
 function update() {
-    let inputDate = document.getElementById('input').value;
+    let inputDate = document.getElementById("date").value;
     let url = "./server/updateHoroscope.php"
     let method = "POST"
-
     let formData = new FormData()
     formData.set("date", inputDate)
-    makeRequest(url, method, formData, (result) => {
-        cosole.log(result);
-        if(result) {
-            getHoroscope();
-        }
-    });
-}
+    makeRequest(url, method, formData, function(result){
+        if(result == true){
+            show();
+        } 
+            console.log(result);    
+}); 
+};
 
 
 
-function update() {
-    let inputDate = document.getElementById('input').value;
-    let url = "./server/viewHoroscope.php"
-    let method = "GET"
-
-    let formData = new FormData()
-    formData.set("date", inputDate)
-    makeRequest(url, method, formData, (result) => {
-        cosole.log(result);
-        if(result) {
-            getHoroscope();
-        }
-    });
-}
 
 
 function getHoroscope() {

@@ -23,6 +23,36 @@ function addContentToWebpage(){
     logic.appendChild(buttons) 
 
 
+    let save = document.createElement("div")
+    save.classList.add("btn")
+    save.setAttribute("id", "save1")
+    save.innerText = "Spara mitt horoskop"
+    buttons.appendChild(save) 
+    save.addEventListener("click", () => {
+   makeRequest(addHoroscope,"./server/addHoroscope.php", "POST")
+})
+
+
+
+    let update = document.createElement("div")
+    update.classList.add("btn")
+    update.setAttribute("id", "update1")
+    update.innerText = "Uppdatera mitt horoskop"
+    buttons.appendChild(update) 
+    update.addEventListener("click", updateH)
+
+
+
+    let deleteBtn = document.createElement("div")
+    deleteBtn.classList.add("btn")
+    deleteBtn.setAttribute("id", "delete1")
+    deleteBtn.innerText = "Radera mitt horoskop"
+    buttons.appendChild(deleteBtn) 
+    deleteBtn.addEventListener("click", () => {
+    makeRequest(deleteHoroscope,"./server/deleteHoroscope.php", "DELETE")
+})
+
+    document.querySelector("#btn").addEventListener("click", getHoroscop)
 
 }
 

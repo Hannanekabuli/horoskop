@@ -126,19 +126,3 @@ function getHoroscope() {
 }
 
 
-
-function deleteResult() {
-    let url = "./server/deleteHoroscope.php"
-    let method = "DELETE"
-    let formData = new FormData()
-    formData.set("date", 0)
-    makeRequest(url, method, formData, function(result){
-        if(result){
-            document.getElementById("resultText").innerText = "radera mitt horoskop";
-        
-            }; 
-}
-
-
-
-

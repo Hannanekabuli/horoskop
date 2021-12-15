@@ -5,48 +5,35 @@ Sidan ska inte använda echo eller skriva någon output förutom true eller fals
 
 <?php 
 
-try {
-        session_start();
+require('./listHoroscope.php');
 
-        if($_SERVER['REQUEST_METHOD']) {
+session_start();
 
-                if($_SERVER["REQUEST_METHOD"] == "POST") {
+if(isset($_SERVER['REQUEST_METHOD'])) {
 
-                        if(!isset($_SESSION["horoscope"])){
+    if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-                                if(isset($_POST["inputDate"])) {
+        if(isset($_POST['date']) && !isset($_SESSION["horoscope"])) {
 
-                                        $inputDate =  $_POST["inputDate"]; 
+            $horoscope = calcualteHoroscope($_POST['date']); 
 
-                                        require_once("./listHoroscope.php");
-                        
-                                        $horoscope = getOutput($_POST["inputDate"], $getHoroscope);
-                                        $_SESSION["horoscope"] = $horoscope;
-                        
-                                        echo json_encode(true);
-                                        exit;
+            $_SESSION["horoscope"] = serialize($horoscope);
 
-                                } else { 
-                                        throw new Exception("Check input", 400);
-                                }
-                                
-                        } else {
-                                echo json_encode(false);
-                                exit;
-                        }
-
-                } else {
-                        throw new Exception("Endpoint not valid", 405);
-                }
-
+            echo json_encode(true);
+            exit;
+            
         } else {
-                throw new Exception("http-request not sent", 404);
+            echo json_encode(false);
+            exit;
         }
 
-} catch(Exception $err) {
-        http_response_code($err -> getCode());
-        echo json_encode($err -> getMessage()); 
+    }else { 
+        echo json_encode("not a POST method");
         exit;
+    }
+    
+} else {
+    echo json_encode("No valid request");
+    exit;
 }
-
 ?>

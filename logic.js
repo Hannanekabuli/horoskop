@@ -22,16 +22,6 @@ function add() {
 }
 
 
-function add() {
-    const saveHoroscope = document.getElementById("sparaHoroscope");
-    saveHoroscope.onclick = send;
-    const updateHoroscope = document.getElementById("updateraHoroskops");
-    updateHoroscope.onclick = update;
-    const deleteHoroscope = document.getElementById("raderaHoroscope");
-    deleteHoroscope.onclick = deleteResult;
-}; 
-
-
 function update() {
     let inputDate = document.getElementById("date").value;
     let url = "./server/updateHoroscope.php"

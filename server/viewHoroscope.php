@@ -1,33 +1,27 @@
-<!--viewHoroscope.php
-sidan ska bara gå att begära via GET, den ska kolla om ett horoskop finns sparat i $_SESSION och 
-i så fall skriva ut det i output. Annars ska sidan inte skriva ut någonting.-->
+<?php 
 
+session_start();
 
-<?php
+if(isset($_SERVER['REQUEST_METHOD'])) {
 
-try {
-    session_start();
+    if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-    if ($_SERVER['REQUEST_METHOD']){
+        if(isset($_SESSION["horoscope"])) {
+            
+            echo json_encode(unserialize($_SESSION["horoscope"]));
+            exit;
+        } else {
+            echo json_encode(false);
+            exit;
+        }
 
-        if($_SERVER["REQUEST_METHOD"] == "GET"){
-
-            if(isset($_SESSION["horoscope"])) {
-                
-                echo json_encode($_SESSION["horoscope"]);
-                exit;
-
-            } else {
-                echo json_encode(false);
-                exit;
-            }
-
-        } 
+    }else { 
+        echo json_encode("not a POST method");
+        exit;
     }
-
-} catch(Exception $err) {
-    echo json_encode($err); 
+    
+} else {
+    echo json_encode("No valid request");
     exit;
 }
-
 ?>

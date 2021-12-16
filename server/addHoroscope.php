@@ -9,7 +9,7 @@ if(isset($_SERVER['REQUEST_METHOD'])) {
 
         if(isset($_POST['date']) && !isset($_SESSION["horoscope"])) {
 
-            $horoscope = calcualteHoroscope($_POST['date']); 
+            $horoscope = listHoroscope($_POST['date']); 
 
             $_SESSION["horoscope"] = serialize($horoscope);
 

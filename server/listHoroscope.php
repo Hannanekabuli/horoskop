@@ -1,147 +1,51 @@
 <?php
 
-$horoscopeList = [
-    [
-        "name" => "Vattumannen",
-        "latinName" : "Aquarius",
-        "start" : 0121,
-        "end" : 0220,
-        "symbol" : "water-Bearer",
-        "elemen"t : "Air",
-        "planet" : "Uranus -Saturn"
-    ],[
-        "name" : "Fiskarna",
-        "latinName" : "Pisces",
-        "start" : 0221,
-        "end" : 0320,
-        "symbol" : "Fish",
-        "element" : "Water",
-        "planet" : "Jupiter - Neptunus"
-    ],[
-        "name" : "Väduren",
-        "latinName" : "Aries",
-        "start" : 0321,
-        "end" : 0420, 
-        "symbol" : "Ram",
-        "element" : "Fire",
-        "planet" : "Pluto - Mars"
-    ],[
-        "name" : "Oxen",
-        "latinName" : "Taurus",
-        "start" : 0421,
-        "end" : 0520,
-        "symbol" : "Ox",
-        "element" : "Earth",
-        "planet" : "Venus"
-    ],[
-        "name" : "Tvillingarna",
-        "latinName" : "Gemini",
-        "start" : 0521,
-        "end" : 0620,
-        "symbol" : "Twin",
-        "element" : "Air",
-        "planet" : "Markurius"
-    ],[
-        "name" : "Kräften",
-        "latinName" : "Canser",
-        "start" : 0621,
-        "end" : 0721,
-        "symbol" : "crab",
-        "element" : "Water",
-        "planet" : "moon"
-    ],[
-        "name" : "Lejonet",
-        "latinName" : "Leo",
-        "start" : 0722,
-        "end" : 0822,
-        "symbol" : "Lion",
-        "element" : "Fire",
-        "planet" : "Sun"
-    ],[
-        "name" : "Jungfrun",
-        "latinName" : "Virgo",
-        "start" : 0823,
-        "end" : 0922,
-        "symbol" : "Maiden",
-        "element" : "Earth",
-        "planet" : "Uranus"
-    ],[
-        "name" : "Vågen",
-        "latinName" : "Libra",
-        "start" : 0923,
-        "end" : 1022,
-        "symbol" : "Scales",
-        "element" : "Air",
-        "planet" : "Venus"
-    ],[
-        "name" : "Skorpion",
-        "latinName" : "Scorpius",
-        "start" : 1023,
-        "end" : 1121,
-        "symbol" : "Scorpion",
-        "element" : "Water",
-        "planet" : "Mars"
-    ],[
-        "name" : "Skytten",
-        "latinName" : "Sagittarius",
-        "start" : 1122,
-        "end" : 1221,
-        "symbol" : "Archer",
-        "element" : "Fire",
-        "planet" : "Jupitor"
-    ],[
-        "name" : "Stenbocken",
-        "latinName" : "Capricornus",
-        "start" : 1222,
-        "end": 0120,
-        "symbol" : "Sea-Goat",
-        "element" : "Earth",
-        "planet" : "Sturnus"
-    ],
-];
+function listHoroscope($date) {
+    $horoscopeArray = array(
+        "Capricorn"=>"12:22:01:19",
+        "Aquarius"=>"01:20:02:18",
+        "Pisces"=>"02:19:03:20",
+        "Aries"=>"03:21:04:19",
+        "Taurus"=>"04:20:05:20",
+        "Gemini"=>"05:21:06:20",
+        "Cancer"=>"06:21:07:22",
+        "Leo"=>"07:23:08:22",
+        "Virgo"=>"08:23:09:22",
+        "Libra"=>"09:23:10:22",
+        "Scorpio"=>"10:23:11:21",
+        "Sagittarius"=>"11:22:12:21",
+    );
 
-function horoskopList($date) {
-    if($date >= 0121 && $date <= 0220){
+    $inputDates = explode("-", $date);
+    $inputMonth = (int)$inputDates[1];
+    $inputDay = (int)$inputDates[2];
 
-    return "Vattumannen";
-}elseif($date >= 0221 && $date <= 0320){
+    $keys = array_keys($horoscopeArray);
 
-return "Fiskarna";
-}elseif($date >= 0321 && $date <= 0420){
+    for ($i=0; $i < count($keys); $i++) { 
+       
+        $key = $keys[$i];
+        $dateString = $horoscopeArray[$key];
+        $dateArray = explode(":", $dateString);
+        
+        $fromMonth = (int)$dateArray[0];
+        $fromDay = (int)$dateArray[1];
+        $toMonth = (int)$dateArray[2];
+        $toDay = (int)$dateArray[3];
+            
+        if($inputMonth == $fromMonth) {
+            if ($inputDay >= $fromDay) {
+                return $key;
+            } 
+        } 
+        
+        if ($inputMonth == $toMonth) {
+            if ($inputDay <= $toDay) {
+                return $key;
+            }
+        }
+    }
 
-    return "Väduren";
-}elseif($date >= 0421 && $date <= 0520){
-
-    return "Oxen";
-}elseif($date >= 0521 && $date <= 0620){
-
-    return "Tvillingarna";
-}elseif($date >= 0621 && $date <= 0721){
-
-    return "Kräften";
-}elseif($date >= 0722 && $date <= 0822){
-
-    return "Lejonet";
-}elseif($date >= 0823 && $date <= 0922){
-
-    return "Jungfrun";
-}elseif($date >= 0923 && $date <= 1022){
-
-    return "Vågen";
-}elseif($date >= 1023 && $date <= 1121){
-
-    return "Skorpion";
-}elseif($date >= 1122 && $date <= 1221){
-
-    return "Skytten";
-}elseif($date >= 1222 && $date <= 0120){
-
-    return "Stenbocken";
-}else{
-    return "false";
 }
-};
-
-
 
 ?>

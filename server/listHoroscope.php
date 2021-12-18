@@ -2,18 +2,18 @@
 
 function listHoroscope($date) {
     $horoscopeArray = array(
-        "Capricorn"=>"12:22:01:19",
-        "Aquarius"=>"01:20:02:18",
-        "Pisces"=>"02:19:03:20",
-        "Aries"=>"03:21:04:19",
-        "Taurus"=>"04:20:05:20",
-        "Gemini"=>"05:21:06:20",
-        "Cancer"=>"06:21:07:22",
-        "Leo"=>"07:23:08:22",
-        "Virgo"=>"08:23:09:22",
-        "Libra"=>"09:23:10:22",
-        "Scorpio"=>"10:23:11:21",
-        "Sagittarius"=>"11:22:12:21",
+        "Aquarius, element är luft"=>"01:21:02:20",
+        "Pisces, element är vatten"=>"02:21:03:20",
+        "Aries, element är eld"=>"03:21:04:20",
+        "Taurus, element är jord"=>"04:21:05:20",
+        "Gemini, element är luft"=>"05:21:06:20",
+        "Cancer, element är vatten "=>"06:21:07:21",
+        "Leo, element är eld"=>"07:22:08:22",
+        "Virgo, element är jord"=>"08:23:09:22",
+        "Libra, element är luft"=>"09:23:10:22",
+        "Scorpio, element är vatten"=>"10:23:11:21",
+        "Sagittarius, elemnt är eld"=>"11:22:12:21",
+        "Capricorn, element är jord"=>"12:22:01:20",
     );
 
     $inputDates = explode("-", $date);

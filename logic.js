@@ -67,7 +67,6 @@ function makeRequest(url, method, formData, callback) {
     
 }
 
-//function to render the horscope
 function getHoroscope() {
     makeRequest("./server/viewHoroscope.php", "GET", undefined, (result) => {
         if(result) {

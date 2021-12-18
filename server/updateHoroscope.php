@@ -1,6 +1,7 @@
 <?php 
 
 require('./listHoroscope.php');
+
 session_start();
 
 if(isset($_SERVER['REQUEST_METHOD'])) {

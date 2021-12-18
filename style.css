@@ -4,14 +4,14 @@
     
   }
 
-body{
-  background-image: url(https://images.indianexpress.com/2021/12/horoscope-3.jpg?w=389);
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+  body{
+    background-image: url(https://images.indianexpress.com/2021/12/horoscope-3.jpg?w=389);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
 }
 
   main{
@@ -45,7 +45,6 @@ body{
   
   .buttonDiv {
     padding: 2em;
-    
     display: flex;
     flex-direction: column;
   }
@@ -69,7 +68,7 @@ body{
   #printDiv{
     width: 400px;
     height: 300px;
-    color: rgb(238, 9, 9);
+    color: rgb(173, 2, 2);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

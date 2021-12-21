@@ -5,14 +5,13 @@
   }
 
   body{
-    background-image: url(https://images.indianexpress.com/2021/12/horoscope-3.jpg?w=389);
+    background-image: url(https://arc-anglerfish-arc2-prod-spectator.s3.amazonaws.com/public/3IDMQEE54FBKPEUPDBKZIPPL4U.gif);
     background-size: cover;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-}
+  }
 
   main{
     display: flex;
@@ -25,7 +24,7 @@
   .head {
     font-size: 3em;
     padding-top: 1em;
-    color: rgb(204, 6, 253);
+    color: white;
   }
   
   .inputDiv {
@@ -37,7 +36,7 @@
   
   input{
     font-size: 35px;        
-    color: rgb(211, 4, 252);
+    color: black;
     background: lightgray;
     border-radius: 100px;
     box-shadow: 7px 7px 4px 3px rgba(30, 70, 247, 0.2); 
@@ -68,11 +67,15 @@
   #printDiv{
     width: 400px;
     height: 300px;
-    color: rgb(173, 2, 2);
+    color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     font-size: 40px;
     padding-bottom: 6em;
+  }
+
+  h2 {
+    color: white;
   }
